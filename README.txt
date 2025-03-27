@@ -1,6 +1,6 @@
 # 🎲 Loot Box Game
 
-**Loot Box Game** is a blockchain-based gaming experience built on Ethereum smart contracts, where players can purchase and open loot boxes containing randomly selected items. Each loot box contains items with varying chances of being selected, providing an exciting element of surprise and engagement.
+**Loot Box Game** is a blockchain-based gaming experience built on PVM smart contracts, where players can purchase and open loot boxes containing randomly selected items. Each loot box contains items with varying chances of being selected, providing an exciting element of surprise and engagement.
 
 ## 🛠️ Game Features
 
@@ -8,7 +8,7 @@
 
 - **Loot Box Creation**: Admins have the flexibility to create loot boxes, specifying the price and assigning items with different probabilities of being drawn, controlled through a weight system.
 
-- **Randomized Rewards**: Players buy loot boxes using Ether. Upon purchase, an item is randomly selected based on the predefined weighted probabilities, ensuring fairness and variety.
+- **Randomized Rewards**: Players buy loot boxes using DOT. Upon purchase, an item is randomly selected based on the predefined weighted probabilities, ensuring fairness and variety.
 
 - **Transparent Events**: Every significant action, including item creation, loot box creation, item deletions, and loot box openings, emits blockchain events. This transparency ensures trust and verifiable gameplay.
 
@@ -18,7 +18,7 @@
 
 1. **Browse Loot Boxes**: Explore available loot boxes, each clearly displaying their name, price, and potential rewards.
 
-2. **Purchase with Ether**: Select a loot box to purchase using Ether. Make sure your wallet has enough funds.
+2. **Purchase with DOT**: Select a loot box to purchase using DOT. Make sure your wallet has enough funds.
 
 3. **Discover Your Prize**: After purchase, your reward is immediately revealed based on a weighted-random mechanism. Each purchase offers excitement and unpredictability!
 
@@ -34,7 +34,7 @@ The game operates via Solidity smart contracts, utilizing mappings and arrays fo
 
 ## 📜 Blockchain Transparency
 
-All transactions, loot box outcomes, and administrative changes are securely and transparently recorded on the Ethereum blockchain, offering players and stakeholders complete confidence in fairness and traceability.
+All transactions, loot box outcomes, and administrative changes are securely and transparently recorded on the blockchain, offering players and stakeholders complete confidence in fairness and traceability.
 
 Dive into the thrill of blockchain-powered randomness and manage your luck with **Loot Box Game**!
 
