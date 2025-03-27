@@ -1,0 +1,589 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "basePrice",
+						"type": "uint256"
+					}
+				],
+				"name": "ItemAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "ItemDeleted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "lootBoxId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"name": "LootBoxCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "lootBoxId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "LootBoxDeleted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "lootBoxId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "lootBoxName",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "itemName",
+						"type": "string"
+					}
+				],
+				"name": "LootBoxPurchased",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_basePrice",
+						"type": "uint256"
+					}
+				],
+				"name": "addItem",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "admin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "adminWithdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "allItems",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "basePrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "inUse",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "allLootBoxes",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalWeight",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "exists",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_lootBoxId",
+						"type": "uint256"
+					}
+				],
+				"name": "buyLootBox",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "itemId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "weight",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct LootBoxGame.WeightedItem[]",
+						"name": "_items",
+						"type": "tuple[]"
+					}
+				],
+				"name": "createLootBox",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_itemId",
+						"type": "uint256"
+					}
+				],
+				"name": "deleteItem",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_lootBoxId",
+						"type": "uint256"
+					}
+				],
+				"name": "deleteLootBox",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "deletedItems",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllLootBoxesCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_lootBoxId",
+						"type": "uint256"
+					}
+				],
+				"name": "getLootBoxInfo",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalWeight",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "itemsCount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_lootBoxId",
+						"type": "uint256"
+					}
+				],
+				"name": "getLootBoxItems",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "itemId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "weight",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct LootBoxGame.WeightedItem[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "lootBoxItems",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "weight",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addItem(string,uint256)": {
+					"params": {
+						"_basePrice": "Some base price or reference price (optional usage).",
+						"_name": "Name of the item."
+					},
+					"returns": {
+						"_0": "itemId The index of the newly created item in `allItems`."
+					}
+				},
+				"buyLootBox(uint256)": {
+					"params": {
+						"_lootBoxId": "The ID of the lootbox to purchase."
+					}
+				},
+				"createLootBox(string,uint256,(uint256,uint256)[])": {
+					"params": {
+						"_items": "Array of WeightedItem (itemId, weight).",
+						"_name": "Name of this lootbox (for display).",
+						"_price": "Price in Wei to buy this lootbox."
+					},
+					"returns": {
+						"_0": "lootBoxId The index of the newly created lootbox in `allLootBoxes`."
+					}
+				},
+				"deleteItem(uint256)": {
+					"params": {
+						"_itemId": "The ID of the item to delete."
+					}
+				},
+				"deleteLootBox(uint256)": {
+					"params": {
+						"_lootBoxId": "The ID of the lootbox to delete."
+					}
+				},
+				"getLootBoxItems(uint256)": {
+					"params": {
+						"_lootBoxId": "The ID of the lootbox."
+					},
+					"returns": {
+						"_0": "Array of WeightedItem structs for this lootbox."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addItem(string,uint256)": {
+					"notice": "Add a new item to the global item list."
+				},
+				"adminWithdraw(address,uint256)": {
+					"notice": "Admin can withdraw Ether from the contract balance."
+				},
+				"buyLootBox(uint256)": {
+					"notice": "Buy a lootbox using Ether (msg.value must be >= lootbox price).         Randomly select an item based on the weight distribution."
+				},
+				"createLootBox(string,uint256,(uint256,uint256)[])": {
+					"notice": "Create a new lootbox with an array of weighted items.         Example usage:         WeightedItem[] => (itemId=1, weight=50), (itemId=2, weight=30), ...         totalWeight = 80 in that case."
+				},
+				"deleteItem(uint256)": {
+					"notice": "Admin can delete an item if it is not in use by any lootbox.         We'll mark it as \"deleted\" in `deletedItems` mapping and remove         it from availability. (We won't actually remove from array to keep it simple.)"
+				},
+				"deleteLootBox(uint256)": {
+					"notice": "Delete a lootbox by ID. This sets `exists = false` and         makes items available for other lootboxes or deletion if needed."
+				},
+				"getAllLootBoxesCount()": {
+					"notice": "Return the number of lootboxes in `allLootBoxes` array.         Some might be deleted, so front-end can filter those out by `exists` flag."
+				},
+				"getLootBoxInfo(uint256)": {
+					"notice": "Get info about a lootbox by ID.         This helps front-end list all lootboxes with their name, price, etc."
+				},
+				"getLootBoxItems(uint256)": {
+					"notice": "Get items for a specific lootbox by ID."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/4_LootBox.sol": "LootBoxGame"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"details": {
+				"constantOptimizer": false,
+				"cse": false,
+				"deduplicate": false,
+				"inliner": false,
+				"jumpdestRemover": false,
+				"orderLiterals": false,
+				"peephole": false,
+				"simpleCounterForLoopUncheckedIncrement": true,
+				"yul": true,
+				"yulDetails": {
+					"optimizerSteps": "dhfoDgvulfnTUtnIfxa[r]EscLMVcul [j]Trpeulxa[r]cLgvifMCTUca[r]LSsTFOtfDnca[r]IulcscCTUtgvifMx[scCTUt] TOntnfDIulgvifMjmul[jul] VcTOcul jmul:fDnTOcmuO",
+					"stackAllocation": true
+				}
+			},
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/4_LootBox.sol": {
+			"keccak256": "0x82208ad690a77e20ef7f21b417a57ee004a217fd5e2ec019cdd3aecce5e37595",
+			"urls": [
+				"bzz-raw://7cab3cd04bc71225aac343a4e371305413883bcceabd5181afa5bd98d6af5fb8",
+				"dweb:/ipfs/QmYMDhJZV6AZ8kWhLKvEsyQCGRYbLwt7dznNLYvm2zrmc2"
+			]
+		}
+	},
+	"version": 1
+}
